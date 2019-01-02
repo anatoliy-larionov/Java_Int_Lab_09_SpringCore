@@ -5,11 +5,13 @@ import java.util.List;
 import org.shop.api.ItemService;
 import org.shop.data.Item;
 import org.shop.repository.ItemRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 
 public class ItemServiceImpl implements ItemService {
     
     /** The item repository. */
-    private final ItemRepository repository;
+    @Autowired
+    private ItemRepository repository;
 
     /**
      * Instantiates a new item service impl.
@@ -19,6 +21,10 @@ public class ItemServiceImpl implements ItemService {
     public ItemServiceImpl(ItemRepository repository) {
         super();
         this.repository = repository;
+    }
+
+    public ItemServiceImpl() {
+
     }
 
     /* (non-Javadoc)

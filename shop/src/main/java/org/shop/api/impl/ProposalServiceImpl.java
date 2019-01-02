@@ -10,18 +10,26 @@ import org.shop.data.Proposal;
 import org.shop.data.Seller;
 import org.shop.data.State;
 import org.shop.repository.ProposalRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 
 public class ProposalServiceImpl implements ProposalService {
 
-    private final ProposalRepository repository;
-    
+    @Autowired
+    private ProposalRepository repository;
+
+    @Autowired
     private SellerService sellerService;
-    
+
+    @Autowired
     private ProductService productService;
     
     public ProposalServiceImpl(ProposalRepository repository) {
         super();
         this.repository = repository;
+    }
+
+    public ProposalServiceImpl() {
+
     }
 
     /* (non-Javadoc)
